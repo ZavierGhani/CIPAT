@@ -1,0 +1,23 @@
+{
+  "playable": [
+    {
+      "id": "it",
+      "name": "Information Technology",
+      "blurb": "Build, connect, and secure the digital systems people rely on.",
+      "keywords": ["code", "coding", "program", "programming", "programmer", "computer", "computers", "komputer", "software", "app", "apps", "aplikasi", "website", "web", "game", "games", "data", "ai", "network", "security", "hacker", "tech", "technology", "teknologi", "robot", "internet", "digital", "engineer", "logic", "puzzle", "puzzles"]
+    },
+    {
+      "id": "law",
+      "name": "Law",
+      "blurb": "Learn to read, argue, and apply the rules that organize society.",
+      "keywords": ["law", "hukum", "lawyer", "pengacara", "legal", "justice", "keadilan", "court", "judge", "hakim", "debate", "debat", "argue", "argument", "rights", "politics", "policy", "society", "fair", "rules", "negotiate", "negotiation", "advocate"]
+    },
+    {
+      "id": "english-ed",
+      "name": "English Education",
+      "blurb": "Learn how language is learned, and how to teach it well.",
+      "keywords": ["teach", "teacher", "teaching", "guru", "mengajar", "english", "bahasa", "language", "languages", "school", "sekolah", "students", "student", "kids", "children", "anak", "explain", "books", "book", "grammar", "speaking", "education", "class", "tutor", "learn", "reading", "writing"]
+    }
+  ],
+  "comingSoon": ["Medicine", "Psychology", "Mechanical Engineering", "Architecture", "Accounting", "Communication", "Mining Engineering", "Biology"]
+}

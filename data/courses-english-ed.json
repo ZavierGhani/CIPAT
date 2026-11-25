@@ -1,0 +1,66 @@
+{
+  "basic": [
+    {
+      "id": "eng-b1",
+      "title": "How Languages Are Learned",
+      "overview": "Learn what helps people pick up a new language.",
+      "lesson": {
+        "title": "Input, practice, feedback",
+        "paragraphs": [
+          "People learn a language by hearing and reading it in ways they can mostly understand, by using it themselves, and by getting feedback.",
+          "A good teacher designs lessons that include all three: something to listen to or read, a chance to speak or write, and kind, useful correction.",
+          "You will also see that learners differ. Some like to speak first, while others need time to listen."
+        ]
+      },
+      "realWorld": "Teachers constantly adjust how they explain things depending on who is in front of them.",
+      "task": {
+        "kind": "text",
+        "prompt": "Think of something in English that you learned and that really stuck. What helped you remember it?",
+        "note": "There is no right answer. Reflecting on how you learn is the starting point for teaching others."
+      }
+    }
+  ],
+  "medium": [
+    {
+      "id": "eng-m1",
+      "title": "Lesson Planning",
+      "overview": "Learn how to design a short lesson with a clear goal.",
+      "lesson": {
+        "title": "Goal, activity, check",
+        "paragraphs": [
+          "A good lesson starts with a goal that says what students will be able to do at the end. Then you choose activities that lead to that goal, and a quick way to check whether it worked.",
+          "For a ten-minute lesson on ordering food, the goal could be that students can order a meal using three sentence patterns. The activity might be a role play, and the check is listening to pairs practise.",
+          "Planning is a skill you repeat many times until it becomes quick."
+        ]
+      },
+      "realWorld": "New teachers often write a short plan for every class they teach and adjust it afterwards.",
+      "task": {
+        "kind": "choice",
+        "prompt": "Which lesson goal is the clearest?",
+        "options": ["Students will learn about food", "Students can order a meal using three sentence patterns", "Make the class fun"],
+        "note": "Many people choose the second because you can see whether it was achieved. Clear goals make planning much easier."
+      }
+    }
+  ],
+  "deep": [
+    {
+      "id": "eng-d1",
+      "title": "Teaching Practice",
+      "overview": "Try the real work of standing in front of a class.",
+      "lesson": {
+        "title": "Teaching in a real classroom",
+        "paragraphs": [
+          "In teaching practice you assist an experienced teacher. You help groups, give feedback, and slowly take over small parts of the lesson.",
+          "Classroom moments are rarely perfect: a student stays silent, an activity ends early, or the room gets noisy. Teachers learn to stay calm and adjust.",
+          "After each lesson, you talk with your supervising teacher about what worked and what to try next."
+        ]
+      },
+      "realWorld": "Many schools welcome student teachers for several weeks, which shows what daily school life really feels like.",
+      "task": {
+        "kind": "text",
+        "prompt": "You ask a question and one student stays silent. Write what you would do next.",
+        "note": "There is no right answer. Responding kindly in the moment is a core teaching skill."
+      }
+    }
+  ]
+}

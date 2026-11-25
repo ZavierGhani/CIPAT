@@ -1,0 +1,13 @@
+{
+  "name": "English Education",
+  "hotspots": [
+    { "id": 1, "title": "Lecture hall", "x": 10, "text": "The lecturer explains how sentences are built and how people actually learn a second language, step by step.", "fact": "You study how language works and how learners acquire it." },
+    { "id": 2, "title": "Language lab", "x": 30, "text": "With headphones on, you practise pronunciation, listen to native speakers, and record yourself to hear what to improve.", "fact": "Teachers practise the skills they will teach." },
+    { "id": 3, "title": "Lesson studio", "x": 50, "text": "You design a short lesson: a goal, an activity, and simple materials that keep a class interested.", "fact": "Planning a lesson is a skill you practise repeatedly." },
+    { "id": 4, "title": "Microteaching room", "x": 70, "text": "You teach ten minutes to classmates who act as students, then they tell you what worked and what did not.", "fact": "Feedback from peers is a regular part of training." },
+    { "id": 5, "title": "School", "x": 90, "text": "You assist a real teacher in a classroom, handle a small group, and see what a school day feels like.", "fact": "Graduates teach in schools and language centers, among other paths." }
+  ],
+  "courses": { "basic": [], "medium": [], "deep": [] },
+  "senior": { "suggestions": [], "fallbackAnswers": [] },
+  "careers": []
+}

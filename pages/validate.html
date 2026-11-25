@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CIPAT: Explore</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="pg">
+<header class="top"><a class="brand" href="../index.html">CIPAT</a><div><a href="majors.html" class="link">Majors</a></div></header>
+<main class="page">
+  <h1 id="major-name"></h1>
+  <p class="prog-label"><span id="prog-text">0/5 explored</span></p>
+  <div class="prog"><div id="prog-fill"></div></div>
+
+  <section class="scene" aria-label="Campus scene">
+    <div id="spots"></div>
+    <div class="player" id="player"><span class="pp"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span></div>
+  </section>
+  <p class="hint">Tap a place to walk there.</p>
+
+  <section id="next" class="picked" hidden>
+    <p>You have seen enough to meet a senior or check your vibe.</p>
+    <div class="row2"><button type="button" id="open-senior" class="btn alt">Ask a senior</button><button type="button" id="open-vibe" class="btn">See my vibe check</button></div>
+  </section>
+  <p id="msg" class="msg" role="alert"></p>
+</main>
+
+<div id="intro" class="overlay">
+  <div class="sheet">
+    <h2 id="intro-title">A day as a student</h2>
+    <p>Hi <span id="intro-name"></span>. Walk around, visit five places, and rate how each one feels. There are no wrong answers.</p>
+    <button type="button" id="start" class="btn">Start exploring</button>
+  </div>
+</div>
+
+<div id="card" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="c-title">
+  <div class="sheet">
+    <div class="card-head"><h2 id="c-title" tabindex="-1"></h2><button type="button" id="c-close" aria-label="Close without rating">×</button></div>
+    <div id="c-video" class="vbox"></div>
+    <p id="c-text"></p>
+    <p id="c-fact" class="fact"></p>
+    <p class="ask">How does this feel?</p>
+    <div id="stars" role="group" aria-label="Rate from 1 to 5 stars">
+      <button type="button" aria-label="1 star">★</button><button type="button" aria-label="2 stars">★</button><button type="button" aria-label="3 stars">★</button><button type="button" aria-label="4 stars">★</button><button type="button" aria-label="5 stars">★</button>
+    </div>
+    <label id="why-wrap" class="field" hidden>Why? (optional)<input id="why" type="text" maxlength="200"></label>
+    <p id="c-msg" class="msg" role="alert"></p>
+    <button type="button" id="c-save" class="btn">Back to scene</button>
+  </div>
+</div>
+
+<div id="senior" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="s-title">
+  <div class="sheet">
+    <div class="card-head"><h2 id="s-title" tabindex="-1">Ask a senior</h2><button type="button" id="s-close" aria-label="Close">×</button></div>
+    <div class="who2"><span class="pp" id="s-avatar"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span><p>Senior Sam, 4th year. You can ask up to 3 questions.</p></div>
+    <div id="chat" class="chat" aria-live="polite"></div>
+    <div id="chips" class="chips"></div>
+    <form id="s-form" class="ask-row"><input id="s-input" maxlength="200" placeholder="Type your own question" aria-label="Your question"><button type="submit" class="btn">Ask</button></form>
+    <p id="s-left" class="hint"></p>
+  </div>
+</div>
+
+<div id="vibe" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="v-title">
+  <div class="sheet">
+    <div class="card-head"><h2 id="v-title" tabindex="-1">Your vibe check</h2><button type="button" id="v-close" aria-label="Close">×</button></div>
+    <ul id="v-list" class="vlist"></ul>
+    <p id="v-sum" class="fact"></p>
+    <div id="v-choice" class="row2"><button type="button" id="v-go" class="btn">Continue to simulation</button><button type="button" id="v-no" class="btn alt">Not quite for me</button></div>
+    <div id="v-reason" hidden>
+      <label class="field" for="r-text">What did not feel right?<textarea id="r-text" maxlength="500"></textarea></label>
+      <button type="button" id="r-send" class="btn">Suggest other majors</button>
+      <div id="r-results" class="stack"></div>
+    </div>
+    <div id="v-done" class="picked" hidden><p>Saved. Your journey continues with three levels.</p><a class="btn" href="simulation.html">Go to the levels</a></div>
+    <p id="v-msg" class="msg" role="alert"></p>
+  </div>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ai.js"></script>
+<script src="../js/pages/validate.js"></script>
+<script src="../js/pages/finish.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "learned": "English Education is about how people learn a language and how to teach it well. You study language, design lessons, practise teaching, and learn to adapt to different learners.",
+  "ladder": [
+    { "stage": "Entry level", "roles": "English teacher, teaching assistant, tutor", "note": "You teach classes with support, plan lessons, and learn from experienced colleagues. Some places require a teaching certification." },
+    { "stage": "Mid level", "roles": "Experienced teacher, curriculum developer, language trainer", "note": "You design courses and materials, mentor newer teachers, and specialize in an age group or skill." },
+    { "stage": "Senior level", "roles": "Head of department, school leader, teacher trainer, education consultant", "note": "You guide other teachers, shape programs, and help improve teaching across a school or organization." }
+  ],
+  "industries": ["Schools", "Language centers", "Universities", "Corporate training", "Education publishers", "Education technology"],
+  "outlook": "Teachers are needed in many settings, from schools to online platforms and companies. Conditions and requirements vary by country and level, so check local sources before planning your path."
+}

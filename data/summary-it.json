@@ -1,0 +1,10 @@
+{
+  "learned": "Information Technology is about building, connecting, and protecting the digital systems that people and organizations depend on. You think in precise steps, organize information, and work in teams to turn ideas into working products.",
+  "ladder": [
+    { "stage": "Entry level", "roles": "Junior developer, IT support, QA tester", "note": "You work on small tasks under guidance, fix problems, and learn the team's tools." },
+    { "stage": "Mid level", "roles": "Software developer, network or systems engineer, data analyst", "note": "You own larger parts of a product or system and help newer teammates." },
+    { "stage": "Senior level", "roles": "Senior engineer, tech lead, security specialist, IT manager", "note": "You make design decisions, guide a team, and connect technical choices to business needs." }
+  ],
+  "industries": ["Software and apps", "Banking and finance", "Healthcare", "Education", "Government", "Telecommunications", "Online retail"],
+  "outlook": "Digital skills are used in almost every industry, so graduates have many directions to choose from. Demand differs by country, specialty, and year, so check current local sources before deciding."
+}

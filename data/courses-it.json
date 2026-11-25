@@ -1,0 +1,66 @@
+{
+  "basic": [
+    {
+      "id": "it-b1",
+      "title": "Introduction to Programming",
+      "overview": "Learn to think like a computer: break a problem into small, exact steps.",
+      "lesson": {
+        "title": "Algorithms: instructions with no guessing",
+        "paragraphs": [
+          "A computer does exactly what you tell it and nothing more. If a step is missing or unclear, it cannot fill the gap the way a person would.",
+          "An algorithm is a list of precise steps that solves a problem. Programming means writing that list in a language the machine can run.",
+          "Try the idea with a daily task, such as making a cup of tea. A person simply does it. A computer needs every step: get a cup, fill the kettle, wait for the water to boil, and so on."
+        ]
+      },
+      "realWorld": "Developers often turn a vague request like “make checkout faster” into precise steps a program can follow.",
+      "task": {
+        "kind": "text",
+        "prompt": "Write the steps to cook instant noodles so precisely that a robot could follow them. Do not skip anything.",
+        "note": "There is no right answer. Notice how many tiny steps you needed. That kind of precision is what programming asks for."
+      }
+    }
+  ],
+  "medium": [
+    {
+      "id": "it-m1",
+      "title": "Databases",
+      "overview": "Learn how information is organized so programs can store and find it.",
+      "lesson": {
+        "title": "Tables, rows, and links",
+        "paragraphs": [
+          "A database stores information in tables. Each row is one record, such as one customer, and each column is one detail, such as a name or an email.",
+          "To avoid repeating data, tables are linked. An order does not copy the customer’s details. It stores a customer ID that points to one row in the customers table.",
+          "You then ask questions called queries, like “show every order from this customer last month”, and the database finds the answer in a moment."
+        ]
+      },
+      "realWorld": "Almost every app, from online shops to school portals, relies on a database behind the scenes.",
+      "task": {
+        "kind": "choice",
+        "prompt": "A shop wants to store customers and their orders. Which approach would you choose?",
+        "options": ["Copy the customer’s full details into every order", "Store each customer once and give every order a customer ID", "Keep everything in one long text note"],
+        "note": "Many people choose the second option because it avoids repeating data. Thinking about structure like this is a big part of database work."
+      }
+    }
+  ],
+  "deep": [
+    {
+      "id": "it-d1",
+      "title": "Software Project",
+      "overview": "See how a team turns an idea into a working product.",
+      "lesson": {
+        "title": "From idea to release",
+        "paragraphs": [
+          "A real project starts with requirements: what should the product do, and for whom? The team splits the work into small tasks and builds in short rounds, often a week or two.",
+          "Along the way they test, fix problems, and show progress to users. Plans change, so talking clearly with teammates matters as much as writing code.",
+          "Interns usually join this process by taking small tasks, such as fixing a bug or testing a new feature."
+        ]
+      },
+      "realWorld": "On an internship you may join a daily stand-up meeting where each person says what they did, what is next, and what blocks them.",
+      "task": {
+        "kind": "text",
+        "prompt": "Your team has three days left and five features to build. Which would you build first, and why?",
+        "note": "There is no right answer. Choosing what to build first, and explaining it, is a real part of project work."
+      }
+    }
+  ]
+}

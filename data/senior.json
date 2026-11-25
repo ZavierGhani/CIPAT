@@ -1,0 +1,23 @@
+{
+  "it": [
+    { "q": "Is it all coding?", "a": "Not all of it. Coding is a big part, but you also learn networks, databases, security, and how to work in a team. Some days are mostly thinking and planning.", "k": ["coding", "code", "program", "all"] },
+    { "q": "What is the hardest part?", "a": "For many people it is debugging, when something fails and you have to find out why. It can be frustrating, but it gets easier with practice.", "k": ["hardest", "hard", "difficult", "struggle"] },
+    { "q": "Do I need to be good at math?", "a": "Some areas use math, like data and algorithms, and others use much less. Logical thinking helps more than speed with numbers.", "k": ["math", "maths", "numbers"] },
+    { "q": "What do graduates do?", "a": "Many become software developers, but others work in networks, security, data, or technical support. The range is wide.", "k": ["graduate", "graduates", "job", "jobs", "career", "work", "after"] },
+    { "q": "How much is teamwork?", "a": "More than people expect. Big projects are built by teams, so planning, sharing work, and explaining your ideas matter a lot.", "k": ["team", "teamwork", "group", "project"] }
+  ],
+  "law": [
+    { "q": "Is it mostly memorizing laws?", "a": "There is reading and remembering, but the main skill is applying rules to a situation and explaining your reasoning.", "k": ["memorize", "memorizing", "memorise", "remember", "laws"] },
+    { "q": "Do I have to speak in court?", "a": "Not every graduate does. Some argue in court, while others advise companies, draft documents, or work in government. Moot court lets you practise speaking.", "k": ["court", "speak", "speaking", "talk"] },
+    { "q": "How much reading is there?", "a": "A lot. Cases, statutes, and articles are part of almost every week, so reading carefully and efficiently becomes a key habit.", "k": ["reading", "read", "homework", "workload"] },
+    { "q": "What is the hardest part?", "a": "Many students find it hard to think precisely, because one word can change the meaning. It takes time to get used to.", "k": ["hardest", "hard", "difficult", "struggle"] },
+    { "q": "What do graduates do?", "a": "Careers include law firms, company legal teams, government, and non-profit work. Not everyone becomes a courtroom lawyer.", "k": ["graduate", "graduates", "job", "jobs", "career", "work", "after"] }
+  ],
+  "english-ed": [
+    { "q": "Will I only study English?", "a": "You study the language, but also how people learn it and how to teach it, including lesson planning and classroom management.", "k": ["only", "english", "study", "language"] },
+    { "q": "Do I need to be fluent already?", "a": "Good English helps, and you keep improving during the program. You do not need to be perfect on day one.", "k": ["fluent", "fluency", "good", "level", "speak"] },
+    { "q": "How much teaching practice is there?", "a": "You practise in microteaching with classmates, and later you spend time assisting in real classrooms.", "k": ["practice", "teaching", "teach", "microteaching", "classroom"] },
+    { "q": "What is the hardest part?", "a": "Many students say keeping a class interested and managing the time in a lesson. Practice and feedback help.", "k": ["hardest", "hard", "difficult", "struggle"] },
+    { "q": "What do graduates do?", "a": "Most teach in schools or language centers. Others work in training, writing learning materials, or education programs.", "k": ["graduate", "graduates", "job", "jobs", "career", "work", "after"] }
+  ]
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CIPAT: Sign up or log in</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="auth">
+<main class="auth-wrap">
+  <a class="brand-link" href="../index.html">CIPAT</a>
+  <section class="auth-card">
+    <div class="tabs"><button type="button" id="tab-up" class="on">Sign up</button><button type="button" id="tab-in">Log in</button></div>
+
+    <form id="f-up" novalidate>
+      <div id="s1">
+        <h1>Create your player</h1>
+        <p class="sub">Step 1 of 2: your account</p>
+        <label class="field">Email<input id="email" type="email" autocomplete="email" required></label>
+        <label class="field">Password<input id="password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <button type="button" id="next" class="btn">Continue</button>
+      </div>
+      <div id="s2" hidden>
+        <h1>Player setup</h1>
+        <p class="sub">Step 2 of 2: about you</p>
+        <label class="field">Your name<input id="name" type="text" autocomplete="given-name" maxlength="40" required></label>
+        <fieldset class="status"><legend>Which one fits you?</legend>
+          <label class="opt"><input type="radio" name="status" value="high_school"><span>High school<small>I am still in school.</small></span></label>
+          <label class="opt"><input type="radio" name="status" value="undergrad"><span>Undergrad<small>I am in university now.</small></span></label>
+          <label class="opt"><input type="radio" name="status" value="gap_year"><span>Gap year<small>I am taking a break before studying.</small></span></label>
+        </fieldset>
+        <div class="row2"><button type="button" id="back" class="btn alt">Back</button><button type="submit" class="btn">Create account</button></div>
+      </div>
+    </form>
+
+    <form id="f-in" hidden novalidate>
+      <h1>Welcome back</h1>
+      <p class="sub">Pick up where you left off</p>
+      <label class="field">Email<input id="li-email" type="email" autocomplete="email" required></label>
+      <label class="field">Password<input id="li-password" type="password" autocomplete="current-password" required></label>
+      <button type="submit" class="btn">Log in</button>
+    </form>
+
+    <p id="msg" class="msg" role="alert"></p>
+  </section>
+</main>
+<script src="../js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/pages/signup.js"></script>
+</body>
+</html>

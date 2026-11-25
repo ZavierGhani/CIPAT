@@ -1,0 +1,66 @@
+{
+  "basic": [
+    {
+      "id": "law-b1",
+      "title": "Introduction to Law",
+      "overview": "Learn how rules are applied to real situations.",
+      "lesson": {
+        "title": "Rules meet facts",
+        "paragraphs": [
+          "Law is not only a list of rules. The main skill is applying a rule to a set of facts and explaining why it fits.",
+          "Take a sign in a park that says “No vehicles.” Does a bicycle count? What about a toy car, or an ambulance in an emergency? Reasonable people can disagree, so lawyers look at the purpose of the rule and its exact words.",
+          "Law students practise this by reading short cases and explaining their reasoning step by step."
+        ]
+      },
+      "realWorld": "Lawyers spend much of their time deciding how a rule applies to a client’s particular facts.",
+      "task": {
+        "kind": "text",
+        "prompt": "A sign says “No vehicles in the park.” Is a bicycle allowed? Give your reasoning in two or three sentences.",
+        "note": "There is no single correct answer. Showing your reasoning is what legal training practises."
+      }
+    }
+  ],
+  "medium": [
+    {
+      "id": "law-m1",
+      "title": "Contracts",
+      "overview": "Learn how agreements become legally binding promises.",
+      "lesson": {
+        "title": "When is a promise binding?",
+        "paragraphs": [
+          "A contract is an agreement the law will enforce. In many legal systems, lawyers look at whether there was a clear offer, whether it was accepted, and whether both sides meant to be bound.",
+          "Rules differ from country to country, so lawyers always check the law that applies to their case.",
+          "You will practise reading an agreement closely, spotting unclear wording, and asking what each side actually promised."
+        ]
+      },
+      "realWorld": "Companies, landlords, and employers all use contracts, and many lawyers draft or review them every day.",
+      "task": {
+        "kind": "choice",
+        "prompt": "Maya texts Dani: “I will sell you my bike for 500,000.” Dani replies: “Deal.” What would a lawyer ask first?",
+        "options": ["Was there a clear offer and a clear acceptance?", "How old are Maya and Dani?", "Which of them owns a nicer bike?"],
+        "note": "Lawyers usually start by asking what was agreed and whether it was clear. Careful questions come before conclusions."
+      }
+    }
+  ],
+  "deep": [
+    {
+      "id": "law-d1",
+      "title": "Legal Clinic",
+      "overview": "See how lawyers help real people with real problems.",
+      "lesson": {
+        "title": "Listening before advising",
+        "paragraphs": [
+          "In a legal clinic, students meet people who need help. The first job is listening, then separating facts from feelings and finding what is still unknown.",
+          "Only after that do you look for the rules that apply and explain the options in plain language.",
+          "Students often work under a supervising lawyer, who reviews every document before it is sent."
+        ]
+      },
+      "realWorld": "Interns at law firms and legal aid centres often prepare case files and draft letters for a lawyer to review.",
+      "task": {
+        "kind": "text",
+        "prompt": "A tenant says the landlord keeps entering the flat without warning. Write two questions you would ask before giving any advice.",
+        "note": "There is no right answer. Good questions about the facts come before any advice."
+      }
+    }
+  ]
+}

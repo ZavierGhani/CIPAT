@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CIPAT: Your major at a glance</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="pg">
+<header class="top"><a class="brand" href="../index.html">CIPAT</a><div><a href="simulation.html" class="link">Levels</a></div></header>
+<main class="page">
+  <span class="note">Part A</span>
+  <h1 id="title">Your major at a glance</h1>
+  <section class="sumbox">
+    <h2>What you explored</h2>
+    <p id="learned"></p>
+    <ul id="tried" class="learned-list"></ul>
+  </section>
+  <section class="sumbox">
+    <h2>Career path</h2>
+    <div id="ladder" class="ladder"></div>
+    <p class="hint">Industries that hire graduates:</p>
+    <div id="industries" class="tags"></div>
+    <p id="outlook" class="para"></p>
+    <p class="hint">Careers differ by country and change over time. Treat this as a general picture.</p>
+  </section>
+
+  <span class="note">Part B</span>
+  <h2 class="sec-title">Your final feedback</h2>
+  <section id="form" class="sumbox"></section>
+
+    <section id="done" class="picked" hidden>
+    <h2>Thank you</h2>
+    <p>Your feedback is saved. Your report is built from everything you told us.</p>
+    <a class="btn" href="report.html">See my report</a>
+  </section>
+  <p id="msg" class="msg" role="alert"></p>
+</main>
+<script src="../js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/pages/summary.js"></script>
+</body>
+</html>

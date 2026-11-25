@@ -1,0 +1,13 @@
+{
+  "name": "Information Technology",
+  "hotspots": [
+    { "id": 1, "title": "Lecture hall", "x": 10, "text": "You sit in your first programming class. The lecturer shows how a big problem is broken into small steps a computer can follow, one at a time.", "fact": "Programming starts with logic, not with typing code." },
+    { "id": 2, "title": "Coding lab", "x": 30, "text": "You write a short program, run it, and it fails. You read the error, change one line, and try again until it works.", "fact": "Finding and fixing mistakes is a big part of the daily work." },
+    { "id": 3, "title": "Server room", "x": 50, "text": "Racks of machines hum and blink. Here you learn how data travels across networks and how systems are kept safe and running.", "fact": "Most people only notice this layer when it breaks." },
+    { "id": 4, "title": "Project studio", "x": 70, "text": "A small team plans an app on a board full of tasks. You split the work, share progress, and fit your parts together.", "fact": "Working well in a team matters as much as technical skill." },
+    { "id": 5, "title": "Tech office", "x": 90, "text": "You join a company as an intern. You help test a new feature, join a stand-up meeting, and see how your classes connect to real products.", "fact": "Careers range from building software to securing systems and analyzing data." }
+  ],
+  "courses": { "basic": [], "medium": [], "deep": [] },
+  "senior": { "suggestions": [], "fallbackAnswers": [] },
+  "careers": []
+}

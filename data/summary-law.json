@@ -1,0 +1,10 @@
+{
+  "learned": "Law is about understanding the rules that organize society and applying them carefully to real situations. You read closely, reason step by step, argue your position, and write clearly.",
+  "ladder": [
+    { "stage": "Entry level", "roles": "Paralegal, legal assistant, junior associate", "note": "You research, prepare documents, and support a lawyer on real cases. In many countries you also need extra exams or training to practise as a lawyer." },
+    { "stage": "Mid level", "roles": "Associate lawyer, in-house counsel, prosecutor, legal advisor", "note": "You handle your own cases or clients and specialize in an area such as contracts or business law." },
+    { "stage": "Senior level", "roles": "Partner, senior counsel, head of legal, judge", "note": "You lead cases or teams, advise on high-stakes decisions, and shape how an organization handles legal risk." }
+  ],
+  "industries": ["Law firms", "Companies' legal departments", "Government", "Courts", "Non-profits and legal aid", "Banking and finance"],
+  "outlook": "Law graduates can work in many places, not only in courtrooms. The route to becoming a practising lawyer differs from country to country, so check the requirements in the place where you plan to work."
+}

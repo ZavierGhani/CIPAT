@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CIPAT: Your levels</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="pg">
+<header class="top"><a class="brand" href="../index.html">CIPAT</a><div><span id="hello">Hi</span><button type="button" id="out">Log out</button></div></header>
+<main class="page">
+  <h1 id="title">Your levels</h1>
+  <p class="lede">Levels show how far into the major you go, not how hard it is. Finish every class in a level to open the next one.</p>
+  <div id="levels"></div>
+  <section id="all-done" class="picked" hidden>
+    <h2>You finished all three levels</h2>
+    <p>Next, see your major at a glance and share your final feedback.</p>
+    <a class="btn" href="summary.html">See my summary</a>
+  </section>
+  <p id="msg" class="msg" role="alert"></p>
+</main>
+<script src="../js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/pages/simulation.js"></script>
+</body>
+</html>

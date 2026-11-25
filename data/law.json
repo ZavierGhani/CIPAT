@@ -1,0 +1,13 @@
+{
+  "name": "Law",
+  "hotspots": [
+    { "id": 1, "title": "Lecture hall", "x": 10, "text": "The lecturer presents a simple case and asks the class who should win and why. The point is to practise reasoning from rules, not memorizing answers.", "fact": "Legal thinking means applying rules to facts." },
+    { "id": 2, "title": "Law library", "x": 30, "text": "You search through statutes and past court decisions to find the rule that fits a case, and mark the parts that matter.", "fact": "Careful reading is the core skill of the whole major." },
+    { "id": 3, "title": "Moot court", "x": 50, "text": "You stand up and argue a small case in front of a mock judge, who interrupts you with questions you did not expect.", "fact": "Moot court lets students practise arguing live." },
+    { "id": 4, "title": "Legal clinic", "x": 70, "text": "You listen to a client explain a problem, then help draft a document that states their situation clearly and correctly.", "fact": "Listening and clear writing matter as much as knowing the law." },
+    { "id": 5, "title": "Law firm", "x": 90, "text": "As an intern you prepare case files, check details, and watch how lawyers handle real deadlines.", "fact": "Law graduates work in firms, companies, government, and many other places." }
+  ],
+  "courses": { "basic": [], "medium": [], "deep": [] },
+  "senior": { "suggestions": [], "fallbackAnswers": [] },
+  "careers": []
+}

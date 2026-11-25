@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CIPAT: My reports</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="pg">
+<header class="top"><a class="brand" href="../index.html">CIPAT</a><div><span id="hello">Hi</span><button type="button" id="out">Log out</button></div></header>
+<main class="page">
+  <h1>My reports</h1>
+  <p class="lede">Every major you finish is saved here like a save file. Open one anytime, or compare them.</p>
+  <div id="saves" class="grid"></div>
+  <p id="empty" class="hint" hidden>No reports yet. Finish a simulation to get your first one.</p>
+  <section id="cmp" class="sumbox" hidden><h2>Compare your majors</h2><p id="best" class="fact"></p><div id="table" class="tscroll"></div></section>
+  <section id="stopped" hidden><h2 class="sec-title">Majors you stopped at the preview</h2><div id="stoplist" class="stack"></div></section>
+  <a class="btn" href="majors.html" style="display:inline-block;width:auto;margin-top:22px">Try another major</a>
+  <p id="msg" class="msg" role="alert"></p>
+</main>
+<script src="../js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/pages/dashboard.js"></script>
+</body>
+</html>
