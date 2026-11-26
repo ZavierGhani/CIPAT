@@ -8,20 +8,28 @@
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="pg">
-<header class="top"><a class="brand" href="../index.html"><img class="brand-mark" src="../assets/img/logo-pixel.svg" alt=""><span></span>CIPAT</span></a><div><a href="majors.html" class="link">Majors</a></div></header>
+<header class="top"><a class="brand" href="../index.html"><img class="brand-mark" src="../assets/img/logo-pixel.svg" alt=""><span>CIPAT</span></a><div><a href="majors.html" class="link">Majors</a></div></header>
 <main class="page">
   <h1>Choose your character</h1>
   <p class="lede">This is who you will play as. Tap one to meet them.</p>
   <div class="chars">
-    <button type="button" class="pick" data-c="boy" aria-pressed="false">
-      <span class="clay boy"><i class="ch"></i><i class="cb"></i><i class="cl"></i></span>
-      <span class="pname">Boy</span>
-      <span class="pp boy sprite"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span>
+    <button type="button" class="pick" data-c="boy" aria-pressed="false" aria-label="Choose Cipi">
+      <span class="tri" aria-hidden="true"></span>
+      <span class="fig">
+        <img class="c-idle" src="../assets/img/characters/cipi-idle.png" alt="">
+        <img class="c-wave" src="../assets/img/characters/cipi-wave.png" alt="" loading="lazy">
+      </span>
+      <span class="plate"><b>Cipi</b><small>Curious mind</small></span>
+      <span class="spr cipi" aria-hidden="true"></span>
     </button>
-    <button type="button" class="pick" data-c="girl" aria-pressed="false">
-      <span class="clay girl"><i class="ch"></i><i class="cb"></i><i class="cl"></i></span>
-      <span class="pname">Girl</span>
-      <span class="pp girl sprite"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span>
+    <button type="button" class="pick" data-c="girl" aria-pressed="false" aria-label="Choose Cita">
+      <span class="tri" aria-hidden="true"></span>
+      <span class="fig">
+        <img class="c-idle" src="../assets/img/characters/cita-idle.png" alt="">
+        <img class="c-wave" src="../assets/img/characters/cita-wave.png" alt="" loading="lazy">
+      </span>
+      <span class="plate"><b>Cita</b><small>Big dreamer</small></span>
+      <span class="spr cita" aria-hidden="true"></span>
     </button>
   </div>
   <button type="button" id="go" class="btn" disabled>Choose this character</button>

@@ -13,8 +13,9 @@
         x.setAttribute('aria-pressed', on);
       });
       $('go').disabled = false;
-      say('You picked ' + (choice === 'boy' ? 'Boy' : 'Girl') + '. Tap the button below to confirm.', 'ok');
-    });
+const nm = choice === 'boy' ? 'Cipi' : 'Cita';
+      $('go').textContent = 'Choose ' + nm;
+      say('You picked ' + nm + '. Tap the button below to confirm.', 'ok');    });
   });
 
   $('go').addEventListener('click', async () => {

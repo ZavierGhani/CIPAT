@@ -7,33 +7,40 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="pg">
+<body class="pg majors-pg">
 <header class="top">
   <a class="brand" href="../index.html"><img class="brand-mark" src="../assets/img/logo-pixel.svg" alt=""><span>CIPAT</span></a>
   <div><a href="dashboard.html" class="link">My reports</a><span id="hello">Hi</span><button type="button" id="out">Log out</button></div>
 </header>
 <main class="page">
   <div id="picker">
-    <h1>Choose a major to explore</h1>
-    <p class="lede">Pick one to step inside, or tell us a bit about yourself and we will suggest a few.</p>
+    <div class="pg-head">
+      <h1>Choose a major to explore</h1>
+      <p class="lede">Pick one to step inside, or tell us a bit about yourself and we will suggest a few.</p>
+    </div>
 
     <section class="helper">
+      <img class="helper-mascot" src="../assets/img/logo-pixel.svg" alt="" width="72" height="49">
       <h2>Not sure where to start?</h2>
       <label for="interest">Tell us what you love, what you are good at, or the job you imagine.</label>
+      <p class="chips-cap">Need an idea? Tap one:</p>
+      <div id="chips" class="chips"></div>
       <textarea id="interest" maxlength="500" placeholder="For example: I like solving puzzles and I want to build apps."></textarea>
+      <div id="count" class="count">0 / 500</div>
       <button type="button" id="suggest" class="btn">Suggest majors</button>
-      <div id="results" class="grid" hidden></div>
+      <div id="thinking" class="thinking" hidden><i></i><i></i><i></i><span>Finding majors for you</span></div>
+      <div id="found" hidden>
+        <h3 class="res-title">Suggested for you</h3>
+        <div id="results" class="grid"></div>
+      </div>
     </section>
 
     <h2 class="sec-title">All majors</h2>
     <div id="grid" class="grid"></div>
-  </div>
 
-  <section id="picked" class="picked" hidden>
-    <h1>Great choice: <span id="picked-name"></span></h1>
-    <p>Choosing your character comes in the next build step. Your pick is already saved.</p>
-    <a class="btn alt" href="majors.html">Pick another major</a>
-  </section>
+    <h2 class="sec-title">Coming soon</h2>
+    <ul id="soon" class="soon-row"></ul>
+  </div>
 
   <p id="msg" class="msg" role="alert"></p>
 </main>

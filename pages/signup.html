@@ -9,7 +9,7 @@
 </head>
 <body class="auth">
 <main class="auth-wrap">
-  <a class="brand-link" href="../index.html">CIPAT</a>
+  <a class="brand-link" href="../index.html" aria-label="CIPAT, back to the home page"><img src="../assets/img/logo-voxel.png" width="920" height="222" alt="CIPAT"></a>
   <section class="auth-card">
     <div class="tabs"><button type="button" id="tab-up" class="on">Sign up</button><button type="button" id="tab-in">Log in</button></div>
 
@@ -18,8 +18,7 @@
         <h1>Create your player</h1>
         <p class="sub">Step 1 of 2: your account</p>
         <label class="field">Email<input id="email" type="email" autocomplete="email" required></label>
-        <label class="field">Password<input id="password" type="password" autocomplete="new-password" minlength="8" required></label>
-        <button type="button" id="next" class="btn">Continue</button>
+        <div class="field"><label for="password">Password</label><span class="pw"><input id="password" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="pw-btn" aria-label="Show password" aria-pressed="false">Show</button></span></div>        <button type="button" id="next" class="btn">Continue</button>
       </div>
       <div id="s2" hidden>
         <h1>Player setup</h1>
@@ -38,8 +37,7 @@
       <h1>Welcome back</h1>
       <p class="sub">Pick up where you left off</p>
       <label class="field">Email<input id="li-email" type="email" autocomplete="email" required></label>
-      <label class="field">Password<input id="li-password" type="password" autocomplete="current-password" required></label>
-      <button type="submit" class="btn">Log in</button>
+      <div class="field"><label for="li-password">Password</label><span class="pw"><input id="li-password" type="password" autocomplete="current-password" required><button type="button" class="pw-btn" aria-label="Show password" aria-pressed="false">Show</button></span></div>      <button type="submit" class="btn">Log in</button>
     </form>
 
     <p id="msg" class="msg" role="alert"></p>
@@ -50,5 +48,6 @@
 <script src="../js/supabase.js"></script>
 <script src="../js/auth.js"></script>
 <script src="../js/pages/signup.js"></script>
+<script src="../js/pages/pw.js"></script>
 </body>
 </html>

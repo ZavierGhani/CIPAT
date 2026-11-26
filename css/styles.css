@@ -183,16 +183,50 @@ body.pg{background:var(--lav);min-height:100svh;padding-bottom:40px}
 .prog-label{margin:14px 0 6px;font-family:var(--lbl);font-size:.85rem}
 .prog{height:16px;border:3px solid var(--ink);background:#fff}
 #prog-fill{height:100%;width:0;background:var(--teal);transition:width .4s}
-.scene{position:relative;height:clamp(300px,52vw,430px);margin-top:14px;background:var(--sky);border:3px solid var(--ink);overflow:hidden}
-.scene::after{content:'';position:absolute;left:0;right:0;bottom:0;height:26%;background:var(--grass);border-top:3px solid var(--ink)}
-.spot{position:absolute;bottom:26%;transform:translateX(-50%);width:19%;min-width:60px;z-index:1;padding:0;background:none;border:0;cursor:pointer;text-align:center;font-family:var(--px);font-size:.85rem;line-height:1.15;color:var(--ink)}
-.spot::before{content:'';display:block;height:clamp(60px,14vw,110px);margin-bottom:6px;border:3px solid var(--ink);background:var(--c,#fff)}
-.spot:nth-child(1){--c:#F6CC48}.spot:nth-child(2){--c:#9DB8F5}.spot:nth-child(3){--c:#F2AEC2}.spot:nth-child(4){--c:#FFD27A}.spot:nth-child(5){--c:#7D7BB9}.spot small{display:block;font-family:var(--body);font-size:.7rem;margin-top:2px}
-.spot.done small{color:var(--indigo);font-weight:700}
-.spot:not(.done)::after{content:'';position:absolute;top:-8px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--indigo);border:2px solid #fff;animation:pulse 1.4s ease-in-out infinite}
-.player{position:absolute;bottom:20%;left:8%;transform:translateX(-50%);z-index:2;transition:left linear}
+/* ===== validate: game look ===== */
+body.val{background:#17163A radial-gradient(rgba(255,255,255,.08) 2px,transparent 2px) 0 0/24px 24px}
+body.val h1{color:var(--cream);font-size:clamp(2rem,6vw,3rem);text-shadow:4px 4px 0 var(--indigo)}
+body.val .prog-label{color:var(--cream)}
+body.val .prog{height:22px;position:relative;border-color:var(--cream);background:var(--deep)}
+body.val .prog::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 3px),var(--deep) calc(20% - 3px) 20%)}
+body.val #prog-fill{background:var(--accent)}
+body.val .sheet{box-shadow:6px 6px 0 var(--ink)}
+/* navbar */
+body.val .top{position:sticky;top:0;z-index:20;border-bottom:4px solid var(--ink);box-shadow:0 4px 0 var(--accent2),0 8px 0 var(--accent)}
+body.val .top .brand{font-family:var(--logo);font-size:.8rem;letter-spacing:.1em;text-shadow:3px 3px 0 var(--indigo)}
+body.val .top .link{font-family:var(--lbl);font-size:.8rem;text-decoration:none;padding:8px 12px;border:3px solid var(--cream);box-shadow:3px 3px 0 var(--indigo);transition:transform .1s,box-shadow .1s}
+body.val .top .link:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--indigo);background:var(--accent);color:var(--ink)}
+/* scene */
+.vstage{margin-top:14px;overflow-x:auto;border:4px solid var(--cream);box-shadow:6px 6px 0 var(--indigo)}.scene{position:relative;container-type:inline-size;min-width:900px;aspect-ratio:2.4/1;overflow:hidden;--floor:32%;
+  background-color:var(--sky);background-size:100% auto;background-position:50% 84%;background-repeat:no-repeat;image-rendering:pixelated}
+.spot{position:absolute;top:0;bottom:0;width:19%;transform:translateX(-50%);z-index:1;padding:0;background:none;border:0;cursor:pointer;text-align:center;color:var(--ink)}
+.spot span{position:absolute;left:50%;top:75%;transform:translateX(-50%);white-space:nowrap;padding:2px 8px;font-family:var(--px);font-size:clamp(.7rem,1.7cqw,.95rem);background:var(--cream);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.spot small{position:absolute;left:0;right:0;top:calc(75% + 2.1rem);font-family:var(--lbl);font-size:.65rem;color:var(--cream);text-shadow:2px 2px 0 var(--ink)}
+.spot:hover span,.spot:focus-visible span{background:var(--accent)}
+.spot::after{content:'▼';position:absolute;left:50%;top:36%;transform:translateX(-50%);font-size:1.3rem;line-height:1;color:var(--accent);text-shadow:2px 2px 0 var(--ink);animation:spotBob .8s steps(2) infinite}
+.spot.done::after{content:'★';animation:none}
+@keyframes spotBob{50%{transform:translate(-50%,6px)}}
+/* player sprite */
+.player{position:absolute;bottom:var(--floor);left:3%;transform:translateX(-50%);z-index:2;transition:left linear}
+.player::before{content:'';position:absolute;left:50%;bottom:-.5cqw;width:5cqw;height:1.2cqw;transform:translateX(-50%);border-radius:50%;background:rgba(37,35,79,.35)}
+.player .pp{--h:6.5cqw;width:calc(var(--h)*.5);height:var(--h);overflow:visible}
+.player .pp.boy{--idle:url(../assets/img/sprite/cipi-idle.png);--walk:url(../assets/img/sprite/cipi-walk.png)}
+.player .pp.girl{--idle:url(../assets/img/sprite/cita-idle.png);--walk:url(../assets/img/sprite/cita-walk.png)}
+.player .pp::before{content:'';position:absolute;left:50%;bottom:0;width:calc(var(--h)*.667);height:100%;transform:translateX(-50%);background:var(--idle) center bottom/contain no-repeat}
+.player .pp::after{content:'';position:absolute;inset:0;opacity:0;background:var(--walk) 0 0/600% 100% no-repeat}
+.player.walking .pp::before{opacity:0}
+.player.walking .pp::after{opacity:1;animation:walk .6s steps(6) infinite}
+@keyframes walk{to{background-position:120% 0}}
 .player.left .pp{transform:scaleX(-1)}
-.player.walking .pp{animation:step .3s steps(2) infinite}
+/* video placeholder */
+.vbox.nov{aspect-ratio:auto;min-height:150px;align-content:center;justify-items:start;text-align:left;gap:10px;padding:14px 16px}
+.nov-tag{margin:0;padding:3px 8px;background:var(--accent);color:var(--ink);border:2px solid var(--ink);font-family:var(--lbl);font-size:.75rem}
+.nov-text{margin:0;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.spot::after,.player.walking .pp::after{animation:none}}
+body.val main>.hint{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:8px 14px;font-family:var(--px);font-size:1.1rem;color:var(--ink);background:var(--cream);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--accent)}
+body.val main>.hint::before{content:'▶';color:var(--indigo);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){body.val main>.hint::before{animation:none}}
 .hint{margin-top:10px;font-size:.9rem}
 .overlay{position:fixed;inset:0;z-index:30;display:grid;place-items:end center;padding:12px;background:rgba(37,37,95,.55)}
 .sheet{width:min(560px,100%);max-height:92svh;overflow:auto;padding:20px;background:var(--cream);border:3px solid var(--ink)}
@@ -451,3 +485,250 @@ body.entering .flash{clip-path:circle(150% at var(--dx,50%) var(--dy,40%));trans
 @media (min-width:900px) and (max-height:720px){
   .o1{top:56%;--sz:1.2}.o2{top:44%;--sz:1.2}.o3{top:36%;--sz:.9}.o4{top:31%;--sz:.9}.o5{top:62%}.o6{top:62%}
 }
+
+
+/* ---- polish: What is CIPAT ---- */
+:root{font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0}
+
+/* A+B: equal card heights, titles always on one line */
+.trio{align-items:stretch}
+.tile{display:flex;flex-direction:column}
+
+/* D: highlighter on the key phrase */
+.intro mark{padding:0 .2em;color:var(--ink);background:linear-gradient(transparent 52%,var(--accent) 52%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+@media (prefers-reduced-motion:no-preference){
+  /* F: cards pop in one by one, once (fails safe: if the script does not run, cards stay visible) */
+  .trio.armed .tile{opacity:0}
+  .trio.armed.in .tile{opacity:1;animation:tilePop .5s steps(5) backwards;animation-delay:calc(var(--i,0)*110ms)}
+  .trio .tile:nth-child(2){--i:1}
+  .trio .tile:nth-child(3){--i:2}
+
+  /* E: icons react on hover, and once after the cards appear */
+  .t1 .ico svg{transform-origin:50% 50%}
+  .t3 .ico svg{transform-origin:50% 100%}
+  .tile:hover .t1 .ico svg,.t1:hover .ico svg{animation:icoBlink .7s steps(1) 1}
+  .t2:hover .ico svg{animation:icoBeat .6s steps(2) infinite}
+  .t3:hover .ico svg{animation:icoGrow .6s steps(4) 1}
+  .trio.in .t1 .ico svg{animation:icoBlink .7s steps(1) 1 .9s}
+  .trio.in .t2 .ico svg{animation:icoBeat .6s steps(2) 2 1s}
+  .trio.in .t3 .ico svg{animation:icoGrow .6s steps(4) 1 1.1s}
+}
+@keyframes tilePop{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes icoBlink{0%,100%{transform:scaleY(1)}40%,60%{transform:scaleY(.12)}}
+@keyframes icoBeat{50%{transform:scale(1.14)}}
+@keyframes icoGrow{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+
+
+/* ---- polish: Your journey ---- */
+/* A + B: the line only runs between the boxes; boxes react like the cards */
+.path{list-style:none;counter-reset:s;margin:0;padding:0;border-left:0}
+.path li{position:relative;counter-increment:s;padding:0 0 30px 66px;min-height:44px}
+.path li:last-child{padding-bottom:0}
+.path li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;display:grid;place-items:center;background:var(--indigo);color:#fff;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-family:var(--lbl);font-size:1.05rem;transition:transform .12s steps(2),box-shadow .12s steps(2),background .12s steps(2),color .12s steps(2)}
+.path li:not(:last-child)::after{content:'';position:absolute;left:20px;top:48px;bottom:-2px;width:4px;background:repeating-linear-gradient(to bottom,var(--indigo) 0 8px,transparent 8px 14px)}
+.path li:hover::before,.path li.on::before{background:var(--accent);color:var(--ink);transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+
+/* C: two columns, logo on the right (on phones it sits between the title and the steps) */
+.wrap.how{max-width:1040px;display:grid;gap:20px;align-items:start}
+.mark{position:relative;margin:14px auto 8px;width:min(78%,320px)}
+@media (min-width:900px){
+  .wrap.how{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"t m" "l m";column-gap:56px;row-gap:28px}
+  .wrap.how>h2{grid-area:t}
+  .wrap.how>.path{grid-area:l}
+  .wrap.how>.mark{grid-area:m;align-self:center;width:100%;margin:0}
+}
+
+/* D: floating logo, shadow, pixel sparkles */
+.mark-float{position:relative}
+.mark-img{display:block;width:100%;height:auto}
+.mark-shadow{display:block;width:62%;height:14px;margin:14px auto 0;border-radius:50%;background:rgba(37,35,79,.22)}
+.spark{position:absolute;width:20px;height:20px;visibility:hidden}
+.spark path{fill:currentColor}
+.s1{left:-2%;top:-14%;color:var(--indigo)}
+.s2{right:6%;top:-20%;color:var(--ink);width:26px;height:26px}
+.s3{right:-4%;bottom:26%;color:var(--indigo);width:16px;height:16px}
+.s4{left:-5%;bottom:34%;color:var(--accent2);width:24px;height:24px}
+.mark-star{position:absolute;right:2%;top:-34%;width:38px;height:38px;visibility:hidden;fill:var(--accent);stroke:var(--ink);stroke-width:1.4}
+
+/* F: more sparkles as the visitor moves down the steps; a star at step 4 */
+.mark[data-step="0"] .s1,.mark[data-step="0"] .s2,
+.mark[data-step="1"] .s1,
+.mark[data-step="2"] .s1,.mark[data-step="2"] .s2,
+.mark[data-step="3"] .s1,.mark[data-step="3"] .s2,.mark[data-step="3"] .s3,
+.mark[data-step="4"] .spark{visibility:visible}
+.mark[data-step="4"] .mark-star{visibility:visible}
+
+/* E: shine sweeps over the letters only (the PNG shape is the mask) */
+.mark-shine{position:absolute;inset:0;pointer-events:none;
+  -webkit-mask:url('../assets/img/logo-voxel.png') center/100% 100% no-repeat;
+  mask:url('../assets/img/logo-voxel.png') center/100% 100% no-repeat;
+  background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%) 160% 0/250% 100% no-repeat}
+
+@media (prefers-reduced-motion:no-preference){
+  .mark-float{animation:markFloat 4s ease-in-out infinite}
+  .mark-shadow{animation:markShadow 4s ease-in-out infinite}
+  .spark{animation:markTwinkle 1.8s steps(4) infinite}
+  .s2{animation-delay:.5s}.s3{animation-delay:1s}.s4{animation-delay:1.4s}
+  .mark:hover .mark-img{animation:markHop .6s steps(6) 1}
+  .mark:hover .mark-shine{animation:markShine .9s steps(10) 1}
+  .mark[data-step="4"] .mark-star{animation:markStar .6s steps(4) backwards}
+}
+@keyframes markFloat{50%{transform:translateY(-10px)}}
+@keyframes markShadow{50%{transform:scale(.86);opacity:.7}}
+@keyframes markHop{0%,100%{transform:translateY(0)}35%{transform:translateY(-16px)}65%{transform:translateY(0)}82%{transform:translateY(-5px)}}
+@keyframes markShine{from{background-position:160% 0}to{background-position:-60% 0}}
+@keyframes markTwinkle{0%,100%{opacity:.25;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
+@keyframes markStar{from{transform:translateY(10px) scale(.2);opacity:0}to{transform:none;opacity:1}}
+
+
+/* ---- polish: What people say ---- */
+/* B: hard shadow and lift on touch, like the cards above */
+.quote{position:relative;display:flex;flex-direction:column;background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .12s steps(2),box-shadow .12s steps(2)}
+.quote:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+
+/* C: colored top bar that matches each avatar */
+.quotes .quote:nth-child(1){border-top:12px solid var(--sky)}
+.quotes .quote:nth-child(2){border-top:12px solid var(--accent)}
+.quotes .quote:nth-child(3){border-top:12px solid var(--accent2)}
+
+/* A: stars are left-aligned and show the real rating */
+.stars{display:block;width:120px;height:24px;margin:14px 0 8px;fill:var(--indigo)}
+.stars .off{fill:#CBD5EC}
+
+/* D: pixel quotation mark in the corner */
+.quote::after{content:'';position:absolute;top:22px;right:18px;width:42px;height:19px;opacity:.75;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 10'%3E%3Cpath fill='%239DB8F5' d='M0 0h9v7H4v3H0zM13 0h9v7h-5v3h-4z'/%3E%3C/svg%3E") no-repeat center/contain}
+
+
+/* ---- polish: login + sign up ---- */
+/* A: voxel logo above the card */
+.brand-link{display:block;width:min(180px,50%);margin-bottom:16px}
+.brand-link img{display:block;width:100%;height:auto}
+
+/* B: card is pinned near the top, so switching tabs or steps never makes it jump */
+body.auth{align-items:start;padding-top:clamp(28px,11vh,110px)}
+
+/* C: messages are boxes, and take no space when empty */
+.msg{min-height:0;margin:14px 0 0;font-weight:700}
+.msg:empty{margin:0}
+.msg:not(:empty){padding:10px 12px;border:3px solid var(--ink);background:#fff}
+.msg.err:not(:empty){background:#FFE4E4;border-color:#B3261E;color:#8F1D16}
+.msg.ok:not(:empty){background:#E3F6EA;border-color:#1B6B4A;color:#14563A}
+
+/* E: Show / Hide button inside the password field */
+.field label{display:block}
+.pw{position:relative;display:block;margin-top:6px}
+.pw input{margin-top:0;padding-right:78px}
+.pw-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);padding:7px 10px;font-family:var(--lbl);font-size:.8rem;color:var(--ink);background:var(--lav);border:2px solid var(--ink);cursor:pointer}
+.pw-btn:hover{background:var(--accent)}
+
+/* ===== Majors page polish ===== */
+[hidden]{display:none!important}
+.btn:focus-visible,.ex-chip:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+body.pg.majors-pg{background:linear-gradient(180deg,#CFE0FA 0,#E4EEFD 280px),#E4EEFD}
+.majors-pg .page{padding-top:8px}
+.pg-head{position:relative;padding-top:52px}
+.pg-head::before,.pg-head::after{content:"";position:absolute;width:60px;height:20px;background:#fff;clip-path:polygon(15px 0,35px 0,35px 5px,50px 5px,50px 10px,60px 10px,60px 15px,55px 15px,55px 20px,5px 20px,5px 15px,0 15px,0 10px,5px 10px,5px 5px,15px 5px)}
+.pg-head::before{top:10px;right:6%}
+.pg-head::after{top:26px;right:30%;transform:scale(.7);transform-origin:right top}
+.helper{position:relative;margin:64px 0 26px}
+.helper-mascot{position:absolute;right:20px;bottom:100%;margin-bottom:-3px;image-rendering:pixelated}
+.chips-cap{margin:12px 0 0;font-size:.9rem;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.ex-chip{font:inherit;font-size:.9rem;padding:6px 10px;background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);cursor:pointer;transition:transform .1s,box-shadow .1s}
+.ex-chip:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+.ex-chip:active{transform:translate(2px,2px);box-shadow:none}
+.count{margin:-6px 0 12px;text-align:right;font-size:.85rem}
+.thinking{display:flex;align-items:center;gap:6px;margin-top:16px;font-weight:700}
+.thinking i{width:8px;height:8px;background:var(--indigo);animation:dotBlink 1s steps(1) infinite}
+.thinking i:nth-child(2){animation-delay:.2s}.thinking i:nth-child(3){animation-delay:.4s}
+.thinking span{margin-left:6px}
+@keyframes dotBlink{0%,100%{opacity:.2}50%{opacity:1}}
+.res-title{margin:20px 0 0;font-size:1.2rem}
+.reveal .major{animation:pop .3s steps(4) both}
+.reveal .major:nth-child(2){animation-delay:.08s}.reveal .major:nth-child(3){animation-delay:.16s}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.major{box-shadow:5px 5px 0 var(--ink);transition:transform .1s,box-shadow .1s}
+.major:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.major:focus-within{outline:3px solid var(--accent);outline-offset:3px}
+.major.suggested{box-shadow:5px 5px 0 var(--accent)}
+.major.suggested:hover{box-shadow:7px 7px 0 var(--accent)}
+.mtile{display:grid;place-items:center;width:72px;height:72px;border:3px solid var(--ink)}
+.mtile img{width:56px;height:56px;object-fit:contain}
+.t-it{background:#D6E3FB}.t-law{background:#FDEFB8}.t-english-ed{background:#FADCE6}
+.soon-row{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.soon-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:3px dashed var(--ink);font-family:var(--px);font-size:1.05rem}
+.soon-ic{display:grid;place-items:center;width:24px;height:24px;opacity:.65}
+.soon-ic img,.soon-ic svg{width:24px;height:24px;object-fit:contain}
+.soon-ic img{filter:grayscale(1)}
+.soon-chip small{font-family:var(--logo);font-size:.5rem;padding:3px 5px;background:var(--ink);color:var(--cream)}
+.majors-pg .msg{position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:0 auto;padding:12px 14px;background:#fff;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);z-index:20}
+.majors-pg .msg:empty{display:none}
+@media (prefers-reduced-motion:reduce){.major,.ex-chip{transition:none}.reveal .major,.thinking i{animation:none}}
+@media (max-width:480px){.top{padding-left:14px;padding-right:14px}.top div{gap:10px;white-space:nowrap}}
+
+/* ===== Inner-page navbar polish ===== */
+.top{position:sticky;top:0;z-index:30;padding:calc(10px + env(safe-area-inset-top)) 20px 10px;border-bottom:3px solid var(--indigo)}
+.top .brand-mark{height:49px}
+.top .brand:hover .brand-mark,.top .brand:focus-visible .brand-mark{animation:wiggle .55s steps(5)}
+.top div{gap:12px}
+.top .link{border-bottom:0;padding:4px 2px;box-shadow:inset 0 -3px 0 transparent;transition:box-shadow .1s}
+.top .link:hover,.top .link:focus-visible{box-shadow:inset 0 -3px 0 var(--accent)}
+.top #hello{padding:4px 10px;background:var(--accent);color:var(--ink);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--indigo)}
+.top button{padding:4px 12px;background:transparent;color:var(--cream);border:2px solid var(--cream);box-shadow:2px 2px 0 var(--indigo);transition:transform .1s,box-shadow .1s,background .1s,color .1s}
+.top button:hover{background:var(--cream);color:var(--ink);transform:translate(1px,1px);box-shadow:1px 1px 0 var(--indigo)}
+.top button:active{transform:translate(2px,2px);box-shadow:none}
+.top button:focus-visible,.top .link:focus-visible,.top .brand:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (max-width:480px){.top{padding-left:12px;padding-right:12px}.top div{gap:8px}.top .brand{font-size:.7rem;gap:6px}.top .link,.top button{font-size:.95rem}.top button{padding:3px 8px}.top #hello{display:none}}
+@media (prefers-reduced-motion:reduce){.top .brand:hover .brand-mark,.top button{animation:none;transition:none}}
+
+/* ===== validate: modals ===== */
+body.val .sheet{border-top:10px solid #F6CC48}
+body.val .sheet h2{text-shadow:2px 2px 0 #E4EEFD}
+body.val .who2{padding:10px;background:#E4EEFD;border:3px solid #25234F;box-shadow:4px 4px 0 #3650A2}
+.s-avatar{width:64px;height:96px;flex:none;image-rendering:pixelated;filter:drop-shadow(3px 3px 0 #25234F)}
+body.val .chat{max-height:36svh;overflow:auto;padding:4px 8px 8px 12px}
+body.val .bub{position:relative;font-size:.98rem;box-shadow:3px 3px 0 #25234F}
+body.val .bub.bot::before{content:'';position:absolute;left:-12px;top:12px;border:6px solid transparent;border-right-color:#25234F}
+body.val .bub.me::before{content:'';position:absolute;right:-12px;top:12px;border:6px solid transparent;border-left-color:#25234F}
+.bub.typing{letter-spacing:.25em;animation:blink 1s steps(2) infinite}
+body.val .chips button{box-shadow:3px 3px 0 #25234F;transition:transform .1s,box-shadow .1s}
+body.val .chips button:hover{background:#F6CC48;transform:translate(2px,2px);box-shadow:1px 1px 0 #25234F}
+body.val .ask-row .btn{box-shadow:3px 3px 0 #25234F}
+/* intro hero */
+body.val #intro .sheet{text-align:center}
+body.val #intro .sheet::before{content:'';display:block;width:90px;height:135px;margin:0 auto 8px;background:center bottom/contain no-repeat;image-rendering:pixelated;animation:bob2 1s steps(2) infinite}
+body[data-char=boy] #intro .sheet::before{background-image:url(../assets/img/sprite/cipi-idle.png)}
+body[data-char=girl] #intro .sheet::before{background-image:url(../assets/img/sprite/cita-idle.png)}
+@keyframes bob2{50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.bub.typing,body.val #intro .sheet::before{animation:none}}
+
+/* ===== Character select: one stage (Cipi & Cita) ===== */
+.chars{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;margin:24px 0;padding:34px 8px 6px;background:var(--cream);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);overflow:hidden}
+.chars .pick,.chars .pick.on{position:relative;z-index:1;display:block;padding:0 6px 14px;background:none;border:0;box-shadow:none;outline:0;cursor:pointer;text-align:center;font:inherit;color:inherit}
+.chars .pick::after,.chars .pick.on::after{content:none}
+.chars .pick:focus-visible,.chars .pick.on:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.tri{position:absolute;top:-24px;left:50%;width:32px;height:22px;margin-left:-16px;background:var(--ink);clip-path:polygon(0 0,100% 0,50% 100%);opacity:0;transition:opacity .15s}
+.tri::after{content:"";position:absolute;left:5px;top:3px;right:5px;bottom:8px;background:var(--accent);clip-path:polygon(0 0,100% 0,50% 100%)}
+.pick.on .tri{opacity:1;animation:cpBob 1s steps(2) infinite}
+@keyframes cpBob{50%{transform:translateY(5px)}}
+.fig{position:relative;display:block;width:min(100%,300px);aspect-ratio:3/4;margin:0 auto;opacity:.55;filter:saturate(.45) brightness(1.08);transform:scale(.96);transform-origin:50% 100%;transition:transform .25s steps(4),opacity .25s,filter .25s}
+.fig::after{content:"";position:absolute;left:20%;right:20%;bottom:-3px;height:10px;background:rgba(37,35,79,.16);clip-path:polygon(10% 0,90% 0,100% 50%,90% 100%,10% 100%,0 50%);z-index:-1}
+.fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 100%;transition:opacity .15s}
+.fig .c-wave{opacity:0}
+.pick:hover .fig,.pick:focus-visible .fig,.pick.on .fig{opacity:1;filter:none;transform:scale(1.06)}
+.pick:hover .c-idle,.pick:focus-visible .c-idle,.pick.on .c-idle{opacity:0}
+.pick:hover .c-wave,.pick:focus-visible .c-wave,.pick.on .c-wave{opacity:1}
+.plate{display:block;width:max-content;max-width:94%;margin:10px auto 0;padding:6px 12px;background:#fff;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:background .15s,transform .1s}
+.plate b{display:block;font-family:var(--px);font-size:1.25rem;line-height:1.1}
+.plate small{display:block;font-size:.8rem}
+.pick.on .plate{background:var(--accent)}
+.pick:hover .plate{transform:translate(-1px,-1px)}
+.spr{--fw:34px;position:absolute;right:2px;bottom:80px;width:var(--fw);height:calc(var(--fw)*2);background-repeat:no-repeat;background-size:calc(var(--fw)*6) 100%;background-position:0 0;opacity:0;transform:scale(.7);transform-origin:50% 100%;transition:opacity .2s,transform .2s;pointer-events:none}
+.spr.cipi{background-image:url(../assets/img/sprite/cipi-walk.png)}
+.spr.cita{background-image:url(../assets/img/sprite/cita-walk.png)}
+.pick:hover .spr,.pick:focus-visible .spr,.pick.on .spr{opacity:1;transform:none;animation:cpWalk .72s steps(6) infinite}
+@keyframes cpWalk{to{background-position-x:calc(var(--fw)*-6)}}
+@media (min-width:600px){.spr{--fw:44px;right:10%;bottom:84px}}
+@media (prefers-reduced-motion:reduce){.spr,.tri{animation:none!important}.fig{transition:none}}
+

@@ -7,17 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="pg">
+<body class="pg val">
 <header class="top"><a class="brand" href="../index.html"><img class="brand-mark" src="../assets/img/logo-pixel.svg" alt=""><span>CIPAT</span></a><div><a href="majors.html" class="link">Majors</a></div></header>
 <main class="page">
   <h1 id="major-name"></h1>
   <p class="prog-label"><span id="prog-text">0/5 explored</span></p>
   <div class="prog"><div id="prog-fill"></div></div>
 
-  <section class="scene" aria-label="Campus scene">
-    <div id="spots"></div>
-    <div class="player" id="player"><span class="pp"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span></div>
-  </section>
+  <div class="vstage" id="stage">
+    <section class="scene" id="scene" aria-label="Campus scene">
+      <div id="spots"></div>
+      <div class="player" id="player"><span class="pp"></span></div>
+    </section>
+  </div>
   <p class="hint">Tap a place to walk there.</p>
 
   <section id="next" class="picked" hidden>
@@ -54,8 +56,7 @@
 <div id="senior" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="s-title">
   <div class="sheet">
     <div class="card-head"><h2 id="s-title" tabindex="-1">Ask a senior</h2><button type="button" id="s-close" aria-label="Close">×</button></div>
-    <div class="who2"><span class="pp" id="s-avatar"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span><p>Senior Sam, 4th year. You can ask up to 3 questions.</p></div>
-    <div id="chat" class="chat" aria-live="polite"></div>
+    <div class="who2"><canvas id="s-avatar" class="s-avatar" width="128" height="192" aria-hidden="true"></canvas><p>Senior Sam, 4th year. You can ask up to 3 questions.</p></div>    <div id="chat" class="chat" aria-live="polite"></div>
     <div id="chips" class="chips"></div>
     <form id="s-form" class="ask-row"><input id="s-input" maxlength="200" placeholder="Type your own question" aria-label="Your question"><button type="submit" class="btn">Ask</button></form>
     <p id="s-left" class="hint"></p>

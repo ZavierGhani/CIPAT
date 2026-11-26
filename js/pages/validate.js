@@ -20,13 +20,26 @@
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const player = $('player');
-  let busy = false, at = 8, cur = null, stars = 0;
+  let busy = false, at = 3, cur = null, stars = 0;
 
   $('major-name').textContent = major.name;
   $('intro-title').textContent = 'A day as a ' + major.name + ' student';
   $('intro-name').textContent = profile.name;
   player.classList.add(profile.character);
+    document.body.dataset.char = profile.character;
   player.querySelector('.pp').classList.add(profile.character);
+    const stage = $('stage'), scene = $('scene');
+  scene.style.backgroundImage = "url('../assets/scenes/" + sim.major_id + ".png')";
+  function follow(x) {
+    stage.scrollTo({ left: x / 100 * scene.offsetWidth - stage.clientWidth / 2, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  const SOON = {
+    'law-1': 'You would follow a short case on the screen, jot down the key facts, and raise your hand to say which rule you think applies.',
+    'law-2': 'You would walk between tall shelves, pull out a thick book of statutes or past decisions, and mark the lines that match your case.',
+    'english-ed-1': 'You would sit with your classmates as the lecturer breaks a sentence into parts, then try the same exercise on your own example.',
+    'english-ed-2': 'You would sit in a booth with headphones, repeat a phrase after a native speaker, record yourself, and play it back to hear what to fix.',
+    'english-ed-3': 'You would lay out flashcards and markers on a big table and put together a short lesson: one goal, one activity, and simple materials.'
+  };
   if (Object.keys(ratings).length) $('intro').hidden = true;
   $('start').onclick = () => { $('intro').hidden = true; };
 
@@ -57,6 +70,7 @@
     if (busy) return;
     busy = true;
     const ms = reduce ? 0 : 250 + Math.abs(s.x - at) * 18;
+    follow(s.x);
     player.classList.toggle('left', s.x < at);
     player.style.transitionDuration = ms + 'ms';
     player.style.left = s.x + '%';
@@ -65,16 +79,22 @@
     setTimeout(() => { player.classList.remove('walking'); openCard(s); }, ms + 60);
   }
 
-  function setVideo(id) {
+   function setVideo(s) {
     const box = $('c-video');
+    box.className = 'vbox';
     box.replaceChildren();
     const v = document.createElement('video');
     v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
-    v.src = '../assets/video/' + sim.major_id + '/' + id + '.mp4';
+    v.src = '../assets/video/' + sim.major_id + '/' + s.id + '.mp4';
     v.onerror = () => {
+      const tag = document.createElement('p');
+      tag.className = 'nov-tag';
+      tag.textContent = 'Animation not available yet';
       const p = document.createElement('p');
-      p.textContent = 'Video ' + id + ' goes here (assets/video/' + sim.major_id + '/' + id + '.mp4)';
-      box.replaceChildren(p);
+      p.className = 'nov-text';
+      p.textContent = SOON[sim.major_id + '-' + s.id] || 'You would explore this place and see what a student does here.';
+      box.className = 'vbox nov';
+      box.replaceChildren(tag, p);
     };
     box.append(v);
   }
@@ -95,7 +115,7 @@
     $('why').value = r ? r.why : '';
     $('c-msg').textContent = '';
     paintStars();
-    setVideo(s.id);
+      setVideo(s);
     $('card').hidden = false;
     $('c-title').focus();
   }

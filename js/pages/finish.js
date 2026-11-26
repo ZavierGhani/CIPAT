@@ -58,9 +58,44 @@
     $('s-left').textContent = left ? left + ' of ' + MAX + ' questions left.' : 'That was your last question. Thanks for asking!';
     $('s-input').disabled = $('s-form').querySelector('button').disabled = !left;
   }
+  function drawSenior() {
+    const c = $('s-avatar');
+    if (c.dataset.done) return;
+    const g = c.getContext('2d'), img = new Image();
+    img.onload = () => {
+      g.imageSmoothingQuality = 'high';
+      g.drawImage(img, 0, 0, c.width, c.height);
+      c.dataset.done = '1';
+      try {
+        const d = g.getImageData(0, 0, c.width, c.height), p = d.data;
+        for (let i = 0; i < p.length; i += 4) {
+          const r = p[i] / 255, gr = p[i + 1] / 255, b = p[i + 2] / 255;
+          const mx = Math.max(r, gr, b), mn = Math.min(r, gr, b), l = (mx + mn) / 2;
+          if (mx === mn || l < 0.4) continue;
+          const dl = mx - mn, s = dl / (1 - Math.abs(2 * l - 1));
+          let h = mx === r ? ((gr - b) / dl) % 6 : mx === gr ? (b - r) / dl + 2 : (r - gr) / dl + 4;
+          h = (h * 60 + 360) % 360;
+          if (s < 0.4 || h < 200 || h > 240) continue;
+          const C = (1 - Math.abs(2 * l - 1)) * s, m = l - C / 2;
+          p[i] = m * 255; p[i + 1] = (C + m) * 255; p[i + 2] = (C * 0.83 + m) * 255;
+        }
+        g.putImageData(d, 0, 0);
+      } catch (e) {}
+    };
+    img.src = '../assets/img/sprite/cipi-idle.png';
+  }
 
+  function typeOut(node, text) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { node.textContent = text; return; }
+    let i = 0;
+    const t = setInterval(() => {
+      node.textContent = text.slice(0, ++i);
+      node.scrollIntoView({ block: 'nearest' });
+      if (i >= text.length) clearInterval(t);
+    }, 18);
+  }
   async function openSenior() {
-    $('s-avatar').classList.add('senior');
+        drawSenior();
     if (!qa) {
       try { qa = await (await fetch('../data/senior.json')).json(); } catch (e) { qa = {}; }
     }
@@ -92,12 +127,14 @@
     bubble(text, 'me');
     drawChips();
     updateLeft();
-    const wait = bubble('...', 'bot');
+        const wait = bubble('...', 'bot');
+    wait.classList.add('typing');
     let answer = null;
     try {
       answer = await askAI('senior', { major: V.major.name, question: text, status: V.profile.status, facts: V.spots.map((s) => s.text) });
     } catch (e) { answer = null; }
-    wait.textContent = answer || fallbackAnswer(text);
+        wait.classList.remove('typing');
+    typeOut(wait, answer || fallbackAnswer(text));
     const { error } = await db.from('senior_questions').insert({ sim_id: V.sim.id, question: text });
     if (error) $('s-left').textContent += ' (Your question could not be saved.)';
   }
