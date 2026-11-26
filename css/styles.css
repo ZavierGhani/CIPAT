@@ -1,6 +1,6 @@
 :root{
-  --indigo:#4A52E0;--deep:#2A2D7A;--cream:#FFF6EC;--lav:#EEF0FF;--ink:#25255F;
-  --peach:#FF8A65;--teal:#2BB5A6;--sky:#9DB8F5;--grass:#72B07A;--soil:#8A5A33;
+  --indigo:#3650A2;--deep:#25234F;--cream:#FFF6E0;--lav:#E4EEFD;--ink:#25234F;
+  --accent:#F6CC48;--accent2:#F2AEC2;--peach:var(--accent);--teal:var(--accent2);--sky:#9DB8F5;--grass:#72B07A;--soil:#8A5A33;
   --px:'Pixelify Sans',monospace;--logo:'Press Start 2P',monospace;--lbl:'Silkscreen',monospace;--body:'DM Sans',system-ui,sans-serif;
   --stair:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M0 12V8h8V4h8V0h8v12z'/%3E%3C/svg%3E");
 }
@@ -16,7 +16,11 @@ a{color:inherit}
 
 /* nav */
 .nav{position:fixed;z-index:10;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;color:#fff}
-.brand{font-family:var(--logo);font-size:.8rem;text-decoration:none;letter-spacing:.1em}
+.brand{font-family:var(--logo);font-size:.8rem;text-decoration:none;letter-spacing:.1em;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{height:49px;width:auto;image-rendering:pixelated;flex:none}
+.top .brand-mark{height:36px}
+.nav{transition:background .2s}
+.nav.solid{background:var(--deep);border-bottom:3px solid var(--indigo)}
 .nav nav{display:flex;gap:16px;align-items:center}
 .link{font-family:var(--px);font-size:1.05rem;text-decoration:none;border-bottom:2px solid currentColor}
 
@@ -29,12 +33,13 @@ a{color:inherit}
 .btn-lg:hover{box-shadow:2px 2px 0 #fff}
 
 /* hero */
-.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:84px 20px 40px;background:linear-gradient(180deg,#5B63F0 0%,#A58BF2 58%,#FFB59A 100%)}
-.logo{font-family:var(--logo);font-size:clamp(2.2rem,11vw,4.5rem);letter-spacing:.06em;color:#fff;text-shadow:.07em .07em 0 var(--peach);animation:rise .9s steps(6) both}
-.tagline{font-family:var(--px);font-size:clamp(1.3rem,4.5vw,1.9rem);margin-top:18px}
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink);padding:84px 20px 40px;background:linear-gradient(180deg,#3F5FC0 0%,#8FB4F0 40%,#FDEECE 100%)}
+.logo{font-family:var(--logo);font-size:clamp(2.2rem,11vw,4.5rem);letter-spacing:.06em;color:#fff;text-shadow:.07em .07em 0 var(--deep);animation:rise .9s steps(6) both}.tagline{font-family:var(--px);font-size:clamp(1.3rem,4.5vw,1.9rem);margin-top:18px}
 .lead{max-width:34ch;margin-top:8px;opacity:.95}
-.stage{position:relative;width:min(100%,460px);margin:22px 0 8px}
-.gate{display:block;width:100%;height:auto;transform-origin:50% 55%}
+.stage{position:relative;width:min(80%,360px);margin:22px 0 8px}
+.float{animation:bob 4s ease-in-out infinite}
+.gate{display:block;width:100%;height:auto;transform-origin:50% 38%}
+.shadow{display:block;width:60%;height:14px;margin:8px auto 0;border-radius:50%;background:rgba(37,37,95,.28)}
 .lamps{animation:flick 2.4s steps(2) infinite}
 .cube{position:absolute;width:30px;height:30px;border:3px solid var(--ink);animation:bob 3.4s ease-in-out infinite}
 .c1{left:2%;top:8%;background:var(--sky)}
@@ -98,8 +103,7 @@ blockquote{margin:0}
 
 
 /* auth pages */
-body.auth{min-height:100svh;display:grid;place-items:center;padding:24px 16px;background:linear-gradient(180deg,#5B63F0 0%,#A58BF2 58%,#FFB59A 100%)}
-.auth-wrap{width:100%;max-width:440px}
+body.auth{min-height:100svh;display:grid;place-items:center;padding:24px 16px;background:linear-gradient(180deg,#3F5FC0 0%,#8FB4F0 58%,#FDEECE 100%)}.auth-wrap{width:100%;max-width:440px}
 .brand-link{display:inline-block;margin-bottom:16px;font-family:var(--logo);font-size:.8rem;color:#fff;text-decoration:none;letter-spacing:.1em}
 .auth-card{background:var(--cream);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:22px}
 .tabs{display:flex;margin:-22px -22px 20px;border-bottom:3px solid var(--ink)}
@@ -183,8 +187,7 @@ body.pg{background:var(--lav);min-height:100svh;padding-bottom:40px}
 .scene::after{content:'';position:absolute;left:0;right:0;bottom:0;height:26%;background:var(--grass);border-top:3px solid var(--ink)}
 .spot{position:absolute;bottom:26%;transform:translateX(-50%);width:19%;min-width:60px;z-index:1;padding:0;background:none;border:0;cursor:pointer;text-align:center;font-family:var(--px);font-size:.85rem;line-height:1.15;color:var(--ink)}
 .spot::before{content:'';display:block;height:clamp(60px,14vw,110px);margin-bottom:6px;border:3px solid var(--ink);background:var(--c,#fff)}
-.spot:nth-child(1){--c:#FF8A65}.spot:nth-child(2){--c:#9DB8F5}.spot:nth-child(3){--c:#2BB5A6}.spot:nth-child(4){--c:#FFD27A}.spot:nth-child(5){--c:#C9B6F5}
-.spot small{display:block;font-family:var(--body);font-size:.7rem;margin-top:2px}
+.spot:nth-child(1){--c:#F6CC48}.spot:nth-child(2){--c:#9DB8F5}.spot:nth-child(3){--c:#F2AEC2}.spot:nth-child(4){--c:#FFD27A}.spot:nth-child(5){--c:#7D7BB9}.spot small{display:block;font-family:var(--body);font-size:.7rem;margin-top:2px}
 .spot.done small{color:var(--indigo);font-weight:700}
 .spot:not(.done)::after{content:'';position:absolute;top:-8px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--indigo);border:2px solid #fff;animation:pulse 1.4s ease-in-out infinite}
 .player{position:absolute;bottom:20%;left:8%;transform:translateX(-50%);z-index:2;transition:left linear}
@@ -288,3 +291,163 @@ button.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
 .cmp{width:100%;border-collapse:collapse;font-size:.95rem}
 .cmp th,.cmp td{padding:8px 10px;border:3px solid var(--ink);text-align:left}
 .cmp th{background:var(--lav);font-family:var(--px)}
+
+
+body.entering .float{animation-play-state:paused}
+body.entering .shadow{opacity:0;transition:opacity .4s}
+
+
+/* =====================================================
+   LANDING POLISH v2 (tempel di paling bawah styles.css)
+   Disesuaikan untuk gate.png dan transisi lewat kode
+   ===================================================== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---- navbar: hover logo + tombol panah tengah ---- */
+.brand{position:relative}
+.brand i{display:inline-block;font-style:normal}
+.nav .brand:hover .brand-mark,.nav .brand:focus-visible .brand-mark{animation:wiggle .55s steps(5)}
+.nav .brand:hover i,.nav .brand:focus-visible i{animation:hop .5s steps(4) both;animation-delay:calc(var(--i)*60ms)}
+@keyframes hop{0%,100%{transform:none;color:inherit}40%,60%{transform:translateY(-7px);color:var(--accent)}}
+@keyframes wiggle{0%,100%{transform:none}25%{transform:translateY(-5px) rotate(-8deg) scale(1.08)}50%{transform:rotate(6deg) scale(1.08)}75%{transform:translateY(-3px) rotate(-4deg)}}
+@media (hover:hover){
+  .nav .brand::before{content:attr(data-hint);position:absolute;left:6px;top:calc(100% + 12px);white-space:nowrap;padding:6px 10px;background:var(--cream);color:var(--ink);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-family:var(--lbl);font-size:.8rem;letter-spacing:0;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .15s steps(3),transform .15s steps(3)}
+  .nav .brand:hover::before,.nav .brand:focus-visible::before{opacity:1;transform:none}
+}
+
+.nav-down{position:absolute;left:50%;top:calc(12px + env(safe-area-inset-top));transform:translateX(-50%);width:44px;height:44px;display:grid;place-items:center;padding:0;background:rgba(37,35,79,.35);color:#fff;border:3px solid #fff;box-shadow:3px 3px 0 var(--deep);cursor:pointer;transition:transform .1s,box-shadow .1s,background .2s,color .2s}
+.nav-down svg{width:20px;height:10px;fill:currentColor;animation:nudge 1.1s steps(2) infinite}
+.nav-down:hover{background:var(--accent);color:var(--ink);transform:translate(calc(-50% + 2px),2px);box-shadow:1px 1px 0 var(--deep)}
+.nav-down.up svg{transform:rotate(180deg);animation:none}
+.nav.solid .nav-down{background:var(--indigo)}
+.nav.solid .nav-down:hover{background:var(--accent)}
+@keyframes nudge{50%{transform:translateY(4px)}}
+.nav.solid::after{content:"";position:absolute;left:0;bottom:-3px;height:3px;width:calc(var(--p,0)*100%);background:var(--accent)}
+
+/* ---- hero ---- */
+.hero{--mx:0;--my:0;isolation:isolate;min-height:calc(100svh - 46px);padding:78px 20px 24px}
+.logo{animation:none;font-size:clamp(2rem,min(10.5vw,9.5svh),4.5rem)}
+.logo i{display:inline-block;font-style:normal;animation:drop .5s steps(5) both;animation-delay:calc(var(--i)*110ms + .1s)}
+@keyframes drop{from{transform:translateY(-44px);opacity:0}to{transform:none;opacity:1}}
+.tagline{margin-top:min(18px,2svh)}
+.tagline i{font-style:normal}
+.lead{max-width:46ch;margin-top:6px}
+.actions{margin-top:min(16px,2svh);animation:rise .6s steps(5) 1.9s both}
+.logo,.tagline,.lead{position:relative;z-index:2}
+
+.sky{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.st{position:absolute;width:var(--s,4px);height:var(--s,4px);background:#fff;opacity:.9;animation:tw 2.4s steps(2) infinite;animation-delay:var(--d,0s)}
+@keyframes tw{50%{opacity:.15}}
+.cloud{position:absolute;left:0;width:var(--w,120px);opacity:.92;animation:cloud var(--t,70s) linear infinite;animation-delay:var(--dl,0s);filter:drop-shadow(0 3px 0 rgba(37,35,79,.1))}
+.cloud svg{display:block;width:100%;height:auto}
+@keyframes cloud{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+.ff{position:absolute;width:4px;height:4px;background:var(--accent);box-shadow:0 0 0 3px rgba(246,204,72,.3);opacity:0;animation:ff var(--t,7s) linear infinite;animation-delay:var(--d,0s)}
+@keyframes ff{0%{opacity:0;transform:none}15%,80%{opacity:1}100%{opacity:0;transform:translate(var(--x,20px),-80px)}}
+
+/* gate.png: pulau melayang, matahari di belakang pintu */
+.stage{z-index:1;width:min(100%,400px,33svh);margin:min(18px,2svh) 0 6px;transform:translate3d(calc(var(--mx)*-7px),calc(var(--my)*-5px),0);transition:transform .3s ease-out}
+.shadow{filter:blur(2px);animation:shade 4s ease-in-out infinite}
+@keyframes shade{50%{transform:scaleX(.84)}}
+.sun{position:absolute;left:50%;top:38%;width:104%;aspect-ratio:1;translate:-50% -50%;z-index:-1}
+.sun i{position:absolute;inset:0;background:var(--accent);clip-path:polygon(30% 0,70% 0,70% 8%,84% 8%,84% 16%,92% 16%,92% 30%,100% 30%,100% 70%,92% 70%,92% 84%,84% 84%,84% 92%,70% 92%,70% 100%,30% 100%,30% 92%,16% 92%,16% 84%,8% 84%,8% 70%,0 70%,0 30%,8% 30%,8% 16%,16% 16%,16% 8%,30% 8%)}
+.sun i:first-child{inset:-9%;background:rgba(255,246,224,.38);animation:halo 3s steps(2) infinite}
+@keyframes halo{50%{scale:1.1;opacity:.55}}
+
+/* objek melayang (placeholder pixel, nanti diganti PNG voxel) */
+.objs{z-index:2;position:absolute;inset:0;width:min(100%,1000px);margin-inline:auto;pointer-events:none}
+.obj{position:absolute;width:calc(var(--sz,1)*clamp(48px,7.5vw,92px));transform:translate3d(calc(var(--mx)*var(--p,10)*1px),calc(var(--my)*var(--p,10)*1px),0);transition:transform .3s ease-out;filter:drop-shadow(0 5px 0 rgba(37,35,79,.22))}
+.obj>*{display:block;width:100%;height:auto;animation:drift 4s ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes drift{50%{transform:translateY(-10px) rotate(4deg)}}
+.o1{left:15%;top:50%;--p:18;--dl:-.4s}
+.o2{right:14%;top:44%;--p:-14;--dl:-1.6s}
+.o3{left:4%;top:24%;--sz:.85;--p:10;--dl:-2.4s}
+.o4{right:6%;top:26%;--sz:.85;--p:-10;--dl:-3s}
+.o5{left:21%;top:73%;--sz:.8;--p:22;--dl:-1s}
+.o6{right:21%;top:71%;--sz:.8;--p:-20;--dl:-2s}
+
+.btn-lg{animation:pulse 1.6s steps(2) infinite}
+@keyframes pulse{50%{box-shadow:4px 4px 0 #fff,0 0 0 6px rgba(255,255,255,.4)}}
+
+/* ---- ticker ---- */
+.ticker{position:relative;overflow:hidden;background:var(--accent);color:var(--ink);border-top:3px solid var(--ink);padding:9px 0 14px;font-family:var(--lbl);font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.track{display:inline-flex;animation:tick 45s linear infinite}
+.track span{display:inline-flex;align-items:center;gap:14px;padding-right:30px}
+.track svg{width:16px;height:16px;fill:var(--ink)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---- section polish ---- */
+.tile{position:relative;transition:transform .12s steps(2),box-shadow .12s steps(2)}
+.tile:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.ico{display:block;width:56px;height:56px;margin-bottom:14px}
+.ico svg{display:block;width:100%;height:100%}
+.sec .sky{z-index:0}
+.sec>.wrap{position:relative;z-index:1}
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .45s steps(5),transform .45s steps(5);transition-delay:calc(var(--n,0)*90ms)}
+  .js .rv.in{opacity:1;transform:none}
+}
+
+/* ---- transisi Press start (murni kode) ---- */
+.warp{position:absolute;inset:0;pointer-events:none;opacity:0;background:repeating-conic-gradient(from 0deg at var(--dx,50%) var(--dy,40%),rgba(255,246,224,.55) 0 2deg,transparent 2deg 9deg);-webkit-mask-image:radial-gradient(circle at var(--dx,50%) var(--dy,40%),transparent 0,#000 22%);mask-image:radial-gradient(circle at var(--dx,50%) var(--dy,40%),transparent 0,#000 22%);transform-origin:var(--dx,50%) var(--dy,40%)}
+.flash{opacity:1;background:#FFF1C9;clip-path:circle(0% at var(--dx,50%) var(--dy,40%))}
+body.entering .nav,body.entering .logo,body.entering .tagline,body.entering .lead,body.entering .actions,body.entering .ticker{opacity:0;transition:opacity .35s}
+body.entering .actions{animation:none}
+body.entering .obj{transform:translate3d(calc(var(--vx,0)*1px),calc(var(--vy,0)*1px),0) scale(2.4);opacity:0;transition:transform .9s ease-in,opacity .7s ease-in}
+body.entering .sun{scale:5;opacity:0;transition:scale 1.1s ease-in,opacity .8s .2s}
+body.entering .warp{opacity:1;transform:scale(1.7);transition:opacity .4s .1s,transform 1s ease-in}
+body.entering .flash{clip-path:circle(150% at var(--dx,50%) var(--dy,40%));transition:clip-path .7s ease-in .5s}
+
+/* ---- layar pendek (laptop) ---- */
+@media (max-height:720px){
+  .hero{padding-top:72px}
+  .lead{display:none}
+  .stage{width:min(100%,400px,30svh)}
+}
+
+/* ---- layar kecil ---- */
+@media (max-width:719px){
+  .stage{width:min(78vw,33svh)}
+  .o1{left:2%;top:52%}.o2{right:2%;top:50%}.o3{left:3%;top:13%}.o4{right:3%;top:13%}.o5{left:6%;top:73%}.o6{right:6%;top:71%}
+}
+@media (max-width:480px){
+  .nav .brand i{display:none}
+  .nav nav{gap:10px}
+  .link{font-size:.9rem}
+  .btn-sm{padding:6px 10px}
+}
+
+/* ---- desktop lebar: objek dirapatkan ke gerbang ---- */
+@media (min-width:900px){
+  .objs{width:min(100%,760px)}
+  .o1{left:8%;top:52%}.o2{right:8%;top:46%}.o3{left:2%;top:22%}.o4{right:2%;top:26%}.o5{left:20%;top:76%}.o6{right:20%;top:74%}
+}
+@media (min-width:900px) and (max-height:720px){
+  .o1{top:46%}.o2{top:40%}.o5{left:22%;top:62%}.o6{right:22%;top:60%}
+}
+
+.obj{width:calc(var(--sz,1)*clamp(64px,9vw,130px));filter:drop-shadow(0 6px 6px rgba(37,35,79,.25))}
+
+
+
+/* ===== TWEAK v3: sebaran objek tiga lapisan kedalaman ===== */
+.sun i:last-child{opacity:.7}
+.sun i:first-child{background:rgba(255,246,224,.2)}
+.obj{width:calc(var(--sz,1)*clamp(64px,9vw,130px));filter:drop-shadow(0 6px 6px rgba(37,35,79,.22))}
+.sky .cloud:nth-child(1){top:44%!important}
+.sky .cloud:nth-child(2){top:58%!important}
+.sky .cloud:nth-child(3){top:68%!important}
+@media (min-width:900px){
+  .objs{width:min(100%,1600px)}
+  /* depan: besar, sedikit buram, terpotong di tepi layar */
+  .o1{left:-1%;top:60%;--sz:1.35;--p:34;rotate:-8deg;filter:blur(1.5px) drop-shadow(0 8px 8px rgba(37,35,79,.22))}
+  .o2{right:-1%;top:49%;--sz:1.35;--p:-30;rotate:9deg;filter:blur(1.5px) drop-shadow(0 8px 8px rgba(37,35,79,.22))}
+  /* tengah: tajam, ukuran normal */
+  .o3{left:13%;top:34%;--sz:1;--p:14;rotate:-10deg}
+  .o4{right:13%;top:29%;--sz:1;--p:-12;rotate:8deg}
+  /* jauh: kecil dan pudar */
+  .o5{left:28%;top:67%;--sz:.6;--p:5;rotate:14deg;opacity:.6}
+  .o6{right:27%;top:70%;--sz:.6;--p:-5;rotate:-12deg;opacity:.6}
+}
+@media (min-width:900px) and (max-height:720px){
+  .o1{top:56%;--sz:1.2}.o2{top:44%;--sz:1.2}.o3{top:36%;--sz:.9}.o4{top:31%;--sz:.9}.o5{top:62%}.o6{top:62%}
+}

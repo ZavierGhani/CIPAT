@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CIPAT: Try a major before you choose it</title>
+<link rel="icon" href="assets/img/logo-pixel.svg" type="image/svg+xml">
 <meta name="description" content="Step inside a major, try its classes, and see how it really feels.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,48 +15,59 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="star" viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9.5 16.5,14 18.5,21.5 12,17.5 5.5,21.5 7.5,14 2,9.5 9,9"/></symbol></svg>
 
 <header class="nav">
-  <a class="brand" href="#top">CIPAT</a>
+  <a class="brand" href="#top" data-hint="Hi! Ready to try a major?"><img class="brand-mark" src="assets/img/logo-pixel.svg" alt=""><span>CIPAT</span></a>
+  <button type="button" class="nav-down" aria-label="Scroll to the next section" title="Scroll to the next section"><svg viewBox="0 0 12 6" aria-hidden="true"><path d="M0 0h2v2H0zM10 0h2v2h-2zM2 2h2v2H2zM8 2h2v2H8zM4 4h4v2H4z"/></svg></button>
   <nav><a href="#" class="link">Log in</a><a href="#" class="btn btn-sm" data-start>Start</a></nav>
 </header>
 
 <main id="top">
 <section class="hero">
+  <div class="sky" data-stars="18" data-band="42" data-fireflies="12" aria-hidden="true">
+    <span class="cloud" style="--w:130px;--t:80s;--dl:-10s;top:27%" data-icon="cloud"></span>
+    <span class="cloud" style="--w:96px;--t:62s;--dl:-34s;top:41%" data-icon="cloud"></span>
+    <span class="cloud" style="--w:170px;--t:105s;--dl:-60s;top:54%" data-icon="cloud"></span>
+  </div>
+
+  <div class="objs" aria-hidden="true">
+    <span class="obj o1"><img src="assets/img/objects/laptop.png" alt="" width="512" height="512"></span>
+    <span class="obj o2"><img src="assets/img/objects/gavel.png" alt="" width="512" height="512"></span>
+    <span class="obj o3"><img src="assets/img/objects/book.png" alt="" width="512" height="512"></span>
+    <span class="obj o4"><img src="assets/img/objects/stethoscope.png" alt="" width="512" height="512"></span>
+    <span class="obj o5"><img src="assets/img/objects/gear.png" alt="" width="512" height="512"></span>
+    <span class="obj o6"><img src="assets/img/objects/brush.png" alt="" width="512" height="512"></span>
+  </div>
+
   <h1 class="logo">CIPAT</h1>
   <p class="tagline">Try a major before you choose it.</p>
   <p class="lead">Step inside a major, try its classes, and see how it really feels.</p>
 
   <div class="stage">
-    <span class="cube c1" aria-hidden="true"></span>
-    <span class="cube c2" aria-hidden="true"></span>
-    <span class="cube c3" aria-hidden="true"></span>
-    <svg class="gate" viewBox="0 0 400 300" role="img" aria-label="A voxel campus gate at dusk, glowing from inside">
-      <rect y="228" width="400" height="72" fill="#72B07A"/>
-      <polygon points="140,300 260,300 212,228 188,228" fill="#FFE2C2"/>
-      <rect x="150" y="120" width="100" height="108" fill="#FFF1C9"/>
-      <g fill="#8A5A33"><rect x="106" y="110" width="44" height="118"/><rect x="250" y="110" width="44" height="118"/><rect x="96" y="84" width="208" height="30"/></g>
-      <g fill="#6F4526"><rect x="106" y="150" width="44" height="4"/><rect x="106" y="190" width="44" height="4"/><rect x="250" y="150" width="44" height="4"/><rect x="250" y="190" width="44" height="4"/></g>
-      <g fill="#FF8A65"><rect x="100" y="68" width="24" height="16"/><rect x="276" y="68" width="24" height="16"/></g>
-      <rect x="156" y="92" width="88" height="14" fill="#FFF6EC"/>
-      <g fill="#FFD27A" class="lamps"><rect x="112" y="124" width="8" height="8"/><rect x="280" y="124" width="8" height="8"/></g>
-      <g fill="#4F8F5E"><rect x="20" y="214" width="64" height="30"/><rect x="316" y="214" width="64" height="30"/></g>
-    </svg>
+    <div class="sun" aria-hidden="true"><i></i><i></i></div>
+    <div class="float">
+      <img class="gate" src="assets/img/gate.png" width="840" height="1044" alt="A floating voxel island with a campus gate glowing from inside" fetchpriority="high">
+    </div>
+    <span class="shadow" aria-hidden="true"></span>
   </div>
 
   <div class="actions">
-    <a href="#" class="btn" data-start>Press start</a>
+    <a href="#" class="btn btn-lg" data-start>Press start</a>
     <a href="#how" class="link">How it works</a>
   </div>
+  <div class="warp" aria-hidden="true"></div>
   <div class="flash" aria-hidden="true"></div>
 </section>
 
+<div class="ticker" aria-hidden="true"><div class="track"></div></div>
+
 <section class="sec cream" id="what">
+  <div class="stair" aria-hidden="true"></div>
   <div class="wrap">
     <h2>Not a test. A test drive.</h2>
     <p class="intro">CIPAT lets you experience a major from the inside before you commit to it. There are no right or wrong answers. The only thing that counts is how it feels to you.</p>
     <div class="trio">
-      <article class="tile t1"><h3>Experience it</h3><p>Walk through the world of a major and watch real moments from its classrooms, labs, and workplaces.</p></article>
-      <article class="tile t2"><h3>Say how it feels</h3><p>Rate every moment with stars and tell us why. Your feelings are the data.</p></article>
-      <article class="tile t3"><h3>Get your fit report</h3><p>AI turns your answers into a clear report, and suggests other majors if this one is not quite you.</p></article>
+      <article class="tile t1"><span class="ico" data-icon="eye" aria-hidden="true"></span><h3>Experience it</h3><p>Walk through the world of a major and watch real moments from its classrooms, labs, and workplaces.</p></article>
+      <article class="tile t2"><span class="ico" data-icon="heart" aria-hidden="true"></span><h3>Say how it feels</h3><p>Rate every moment with stars and tell us why. Your feelings are the data.</p></article>
+      <article class="tile t3"><span class="ico" data-icon="chart" aria-hidden="true"></span><h3>Get your fit report</h3><p>AI turns your answers into a clear report, and suggests other majors if this one is not quite you.</p></article>
     </div>
   </div>
 </section>
@@ -94,6 +106,7 @@
 
 <section class="sec deep">
   <div class="stair" aria-hidden="true"></div>
+  <div class="sky" data-stars="26" aria-hidden="true"></div>
   <div class="wrap cta">
     <h2>Ready to step inside?</h2>
     <a href="#" class="btn btn-lg" data-start>Press start</a>
@@ -102,7 +115,7 @@
 </section>
 </main>
 
-<footer class="foot"><span class="brand">CIPAT</span><a href="#" class="link">Log in</a><span class="tag">Prototype</span></footer>
+<footer class="foot"><span class="brand"><img class="brand-mark" src="assets/img/logo-pixel.svg" alt=""><span>CIPAT</span></span><a href="#" class="link">Log in</a><span class="tag">Prototype</span></footer>
 <div id="toast" class="toast" role="status" hidden>Sign-up opens here in the next build step.</div>
 <script src="js/main.js"></script>
 </body>
